@@ -1,4 +1,4 @@
-import { defineConfig, type DefaultTheme } from 'vitepress';
+import { type DefaultTheme, defineConfig } from 'vitepress';
 
 export const en = defineConfig({
   lang: 'en',
@@ -39,6 +39,7 @@ function sidebar(): DefaultTheme.Sidebar {
         { text: 'Installation', link: '/installation' },
         { text: 'Impact on Bundle Size', link: '/bundle-size' },
         { text: 'Performance', link: '/performance' },
+        { text: 'Compatibility with Lodash', link: '/compatibility' },
       ],
     },
     {
@@ -48,6 +49,7 @@ function sidebar(): DefaultTheme.Sidebar {
           text: 'Array Utilities',
           items: [
             { text: 'chunk', link: '/reference/array/chunk' },
+            { text: 'concat (compat)', link: '/reference/compat/array/concat' },
             { text: 'countBy', link: '/reference/array/countBy' },
             { text: 'compact', link: '/reference/array/compact' },
             { text: 'difference', link: '/reference/array/difference' },
@@ -59,16 +61,22 @@ function sidebar(): DefaultTheme.Sidebar {
             { text: 'dropRightWhile', link: '/reference/array/dropRightWhile' },
             { text: 'fill', link: '/reference/array/fill' },
             { text: 'toFilled', link: '/reference/array/toFilled' },
+            { text: 'flatMap', link: '/reference/array/flatMap' },
             { text: 'flatten', link: '/reference/array/flatten' },
             { text: 'flattenDeep', link: '/reference/array/flattenDeep' },
             { text: 'forEachRight', link: '/reference/array/forEachRight' },
             { text: 'groupBy', link: '/reference/array/groupBy' },
             { text: 'intersection', link: '/reference/array/intersection' },
             { text: 'intersectionBy', link: '/reference/array/intersectionBy' },
-            { text: 'intersectionWith', link: '/reference/array/intersectionWith' },
+            {
+              text: 'intersectionWith',
+              link: '/reference/array/intersectionWith',
+            },
             { text: 'keyBy', link: '/reference/array/keyBy' },
             { text: 'minBy', link: '/reference/array/minBy' },
             { text: 'maxBy', link: '/reference/array/maxBy' },
+            { text: 'min (compat)', link: '/reference/compat/array/min' },
+            { text: 'max (compat)', link: '/reference/compat/array/max' },
             { text: 'orderBy', link: '/reference/array/orderBy' },
             { text: 'partition', link: '/reference/array/partition' },
             { text: 'sample', link: '/reference/array/sample' },
@@ -92,6 +100,7 @@ function sidebar(): DefaultTheme.Sidebar {
             { text: 'xorWith', link: '/reference/array/xorWith' },
             { text: 'zip', link: '/reference/array/zip' },
             { text: 'zipObject', link: '/reference/array/zipObject' },
+            { text: 'zipObjectDeep (compat)', link: '/reference/compat/array/zipObjectDeep' },
             { text: 'zipWith', link: '/reference/array/zipWith' },
             { text: 'head', link: '/reference/array/head' },
             { text: 'tail', link: '/reference/array/tail' },
@@ -104,6 +113,7 @@ function sidebar(): DefaultTheme.Sidebar {
           items: [
             { text: 'debounce', link: '/reference/function/debounce' },
             { text: 'throttle', link: '/reference/function/throttle' },
+            { text: 'negate', link: '/reference/function/negate' },
             { text: 'once', link: '/reference/function/once' },
             { text: 'noop', link: '/reference/function/noop' },
           ],
@@ -120,21 +130,29 @@ function sidebar(): DefaultTheme.Sidebar {
             { text: 'range', link: '/reference/math/range' },
             { text: 'round', link: '/reference/math/round' },
             { text: 'sum', link: '/reference/math/sum' },
+            { text: 'sumBy', link: '/reference/math/sumBy' },
           ],
         },
         {
           text: 'Object Utilities',
           items: [
+            { text: 'clone', link: '/reference/object/clone' },
+            { text: 'invert', link: '/reference/object/invert' },
+            { text: 'flattenObject', link: '/reference/object/flattenObject' },
             { text: 'omit', link: '/reference/object/omit' },
             { text: 'omitBy', link: '/reference/object/omitBy' },
             { text: 'pick', link: '/reference/object/pick' },
             { text: 'pickBy', link: '/reference/object/pickBy' },
-            { text: 'invert', link: '/reference/object/invert' },
+            { text: 'get (compat)', link: '/reference/compat/object/get' },
+            { text: 'set (compat)', link: '/reference/compat/object/set' },
           ],
         },
         {
           text: 'Predicates',
           items: [
+            { text: 'isEqual', link: '/reference/predicate/isEqual' },
+            { text: 'isLength', link: '/reference/predicate/isLength' },
+            { text: 'isPlainObject', link: '/reference/predicate/isPlainObject' },
             { text: 'isNil', link: '/reference/predicate/isNil' },
             { text: 'isNotNil', link: '/reference/predicate/isNotNil' },
             { text: 'isNull', link: '/reference/predicate/isNull' },
@@ -143,15 +161,23 @@ function sidebar(): DefaultTheme.Sidebar {
         },
         {
           text: 'Promise Utilities',
-          items: [{ text: 'delay', link: '/reference/promise/delay' }],
+          items: [
+            { text: 'delay', link: '/reference/promise/delay' },
+            { text: 'timeout', link: '/reference/promise/timeout' },
+            { text: 'withTimeout', link: '/reference/promise/withTimeout' },
+          ],
         },
         {
           text: 'String Utilities',
           items: [
+            { text: 'camelCase', link: '/reference/string/camelCase' },
             { text: 'snakeCase', link: '/reference/string/snakeCase' },
             { text: 'kebabCase', link: '/reference/string/kebabCase' },
             { text: 'lowerCase', link: '/reference/string/lowerCase' },
+            { text: 'startCase', link: '/reference/string/startCase' },
             { text: 'capitalize', link: '/reference/string/capitalize' },
+            { text: 'startsWith (compat)', link: '/reference/compat/string/startsWith' },
+            { text: 'endsWith (compat)', link: '/reference/compat/string/endsWith' },
           ],
         },
       ],
